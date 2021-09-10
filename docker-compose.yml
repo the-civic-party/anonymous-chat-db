@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+    build: .
+    ports:
+      - 3001:80
+    # links:
+    #   - db
+    environment:
+      - DB_USER
+      - DB_PASS
+      - DB_URL
+  # db:
+  #   image: mysql
+  #   restart: always
+  #   # environment:
+  #   #   - MYSQL_DATABASE
+  #   #   - MYSQL_USER
+  #   #   - MYSQL_PASSWORD
+  #   #   - MYSQL_ROOT_PASSWORD
+  #   #   - MYSQL_RANDOM_ROOT_PASSWORD
+  #   ports:
+  #     - "3306:3306"
+  #   expose:
+  #     - "3306"
+  #   volumes:
+  #     - type: bind
+  #       source: ./db-schema/react-discord-clone-schema.sql
+  #       target: /docker-entrypoint-initdb.d
