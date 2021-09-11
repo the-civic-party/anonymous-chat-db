@@ -1,17 +1,4 @@
-FROM node:14-alpine
+FROM mysql
 
-RUN apk add dumb-init
+COPY ./db-schema /docker-entrypoint-initdb.d
 
-USER node
-
-RUN mkdir /home/node/code
-WORKDIR /home/node/code
-
-COPY --chown=node:node package-lock.json package.json ./
-
-RUN npm ci
-
-COPY --chown=node:node tsconfig.json ./
-COPY --chown=node:node src/ ./src
-
-CMD ["dumb-init", "npm", "run", "start"]
