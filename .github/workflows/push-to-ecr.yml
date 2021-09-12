@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${ls}
-      - run: docker build --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA} ..
+      - run: docker build --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA} ../.
       - name: Push to ECR
         id: ecr
         uses: jwalton/gh-ecr-push@v1
