@@ -25,4 +25,4 @@ jobs:
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-1
           local-image: ${ { GITHUB_REPOSITORY }:{ GITHUB_SHA } }
-          image: ${{ GITHUB_REPOSITORY }:{ GITHUB_SHA }} , ${ { GITHUB_REPOSITORY }:latest }
+          image: a, ${ { GITHUB_REPOSITORY }:latest }
