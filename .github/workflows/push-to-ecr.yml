@@ -16,6 +16,7 @@ jobs:
     name: Push Docker image to ecr
     runs-on: ubuntu-latest
     steps:
+      - run: ls
       - run: docker build --tag ${GITHUB_REPOSITORY}:${GITHUB_SHA} ..
       - name: Push to ECR
         id: ecr
